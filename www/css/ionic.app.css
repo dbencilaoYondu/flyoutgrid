@@ -9780,14 +9780,19 @@ ion-nav-bar.bar.bar-header {
 .banner {
   width: 100%; }
 
+.customIcon {
+  position: absolute;
+  left: 10px;
+  top: 10px; }
+
 .menuList {
-  height: 418px;
-  overflow: auto;
+  height: auto;
+  overflow-y: scroll;
   display: none; }
   .menuList.row.active {
     display: flex; }
-  .menuList.active {
-    display: block; }
+  .menuList.withHeight {
+    height: 418px; }
   .menuList li {
     height: 136px; }
     .menuList li a {
@@ -9809,12 +9814,16 @@ ion-nav-bar.bar.bar-header {
       padding: 12px;
       color: #fff;
       text-transform: capitalize; }
+  .menuList.menu1.setHeight {
+    height: 418px; }
   .menuList.menu2.list li {
     height: auto; }
     .menuList.menu2.list li a {
       padding-top: 0; }
       .menuList.menu2.list li a p {
         color: #fff; }
+  .menuList.menu2.setHeight {
+    height: 418px; }
 
 #about .custom-content {
   margin-bottom: 12px; }
@@ -9829,6 +9838,13 @@ ion-nav-bar.bar.bar-header {
   text-align: center;
   padding-top: 15px;
   font-size: 21px; }
+
+#contact .contact-label {
+  position: absolute;
+  right: 0;
+  padding: 6px 12px;
+  top: 12px;
+  background: #DCDCDC; }
 
 #inquire .banner {
   height: 136px;

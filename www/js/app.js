@@ -5,9 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','uiGmapgoogle-maps'])
+var app =angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','ngCordova'])
 
-.run(function($ionicPlatform) {
+app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -23,7 +23,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','u
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+
+app.config(function ($stateProvider, $urlRouterProvider) {
+    app.stateProvider = $stateProvider;
+    app.stateProvider.state('init', {
+        url: "/init",
+        templateUrl: "templates/init.html",
+        controller: 'InitCtrl'
+    });
+    app.stateProvider.state('app', {
+        url: "/app",
+        abstract: true,
+        templateUrl: "templates/menu.html",
+        controller: 'AppCtrl'
+    });
+
+    app.urlRouterProvider = $urlRouterProvider;
+    app.urlRouterProvider.otherwise('/init');
+});
+
+/*.config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/app/about');
   
@@ -42,7 +61,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','u
       'menuContent':{
          templateUrl:'templates/about.html',
           controller:'AboutCtrl'
-      }
+      },
+      'sideMenu':{
+         templateUrl:'templates/sideMenu.html',
+         controller:'SettingsCtrl'            
+       }
     }
    
   })
@@ -52,16 +75,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','u
       'menuContent':{
         templateUrl:'templates/contact.html',
         controller:'ContactCtrl'
-      }
+      },
+      'sideMenu':{
+         templateUrl:'templates/sideMenu.html',
+         controller:'SettingsCtrl'      
+       }
     }
   })
-    .state('app.inquire',{
+  .state('app.inquire',{
     url:'/inquire',
      views:{
       'menuContent':{
         templateUrl:'templates/inquire.html',
         controller:'InquireCtrl'
-      }
+      },
+      'sideMenu':{
+         templateUrl:'templates/subMenu.html',
+         controller:'SettingsCtrl'         
+       }
     }
   })
     //gallery
@@ -99,4 +130,4 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','u
   
 
 
-});
+});*/

@@ -71,15 +71,20 @@ ion-nav-bar.bar.bar-header{
 	}
 }
 .banner{width:100%;}
+.customIcon{
+	    position: absolute;
+    left: 10px;
+    top: 10px;
+}
 .menuList{
-	height:418px;
-	overflow:auto;
+	height: auto;
+    overflow-y: scroll;
 	display:none;
 	&.row.active{
 		display:flex;
 	}
-	&.active{
-		display:block;
+	&.withHeight{
+		height:418px;
 	}
 
 	    li{
@@ -107,15 +112,25 @@ ion-nav-bar.bar.bar-header{
 			    text-transform: capitalize;
 	    	}
 	    }
-	&.menu2.list{
-		li{
-			height:auto;
-			a{
-				padding-top:0;
-				p{
-					color:#fff;
+	&.menu1{
+		&.setHeight{
+			height:418px;
+		}
+	}    
+	&.menu2{
+		&.list{
+				li{
+					height:auto;
+					a{
+						padding-top:0;
+						p{
+							color:#fff;
+						}
+					}
 				}
-			}
+		}
+		&.setHeight{
+			height:418px;
 		}
 	}
 }
@@ -140,6 +155,13 @@ ion-nav-bar.bar.bar-header{
 		text-align: center;
     	padding-top: 15px;
     	font-size: 21px;
+    }
+    .contact-label{
+    	position: absolute;
+	    right: 0;
+	    padding: 6px 12px;
+	    top: 12px;
+	    background: #DCDCDC;
     }
 }
 // inquire
