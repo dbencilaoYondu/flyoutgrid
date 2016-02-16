@@ -16,34 +16,29 @@
 
     	</header>
     	<div class="banner">
-    		<img src="../img/custom-images/carImg1_02.jpg" alt="">
+    		<img ng-src="{{data.data.data.menuBanner}}" alt="{{data.data.data.menuBanner}}">
     	</div>
     	<ul class="row menuList menu1 active" ng-class="withHieght">
     		<li ng-hide="subsOn" class="col col-50 text-center nosubs" ng-repeat="info in menuItems" ng-click="openBrowser(info.type,$index)">
     			<a ng-show="info.subMenu" ng-click="subsSwitch(info.label,$index);">
-    				<i class="{{info.iconOn}}"></i>
+    				<i ng-hide="info.customIcon" class="icon {{info.iconOn}}"></i>
+                    <img ng-show="info.customIcon" class="customIcon" ng-src="{{info.customIcon}}" alt="{{info.label}}">
     				<p>{{info.label}}</p>
     			</a>
                 <a ng-hide="info.subMenu" href="{{info.href}}">
-                    <i class="{{info.iconOn}}"></i>
+                    <i ng-hide="info.customIcon" class="icon {{info.iconOn}}"></i>
+                    <img ng-show="info.customIcon" class="customIcon" ng-src="{{info.customIcon}}" alt="{{info.label}}">
                     <p>{{info.label}}</p>
                 </a>
     		</li>
             <li ng-show="subsOn" class="col col-50 text-center subs" ng-repeat="info in currentParentOfSub.menuItems">
                 <a href="{{info.href}}" ng-click="pageInfo($index);">
-                    <i class="{{info.iconOn}}"></i>
+                   <i ng-hide="info.customIcon" class="icon {{info.iconOn}}"></i>
+                    <img ng-show="info.customIcon" class="customIcon" ng-src="{{info.customIcon}}" alt="{{info.label}}">
                     <p>{{info.label}}</p>
                 </a>
             </li>
     	</ul>
 
-    	<ul class="menuList menu2 list">
-    		<li class="item item-icon-left" ng-repeat="info in menuItems" ng-click="openBrowser(info.type,$index)">
-    			<a href="{{info.href}}">
-    				<i class="icon {{info.iconOn}}"></i>
-    				<p>{{info.label}}</p>
-    			</a>
-    		</li>
-    	</ul>
     </div>
 
