@@ -35,6 +35,146 @@
                         "banner":"../img/custom-images/about/about-banner.jpg"
                     },
                     {
+                        "href": "#/app/aboutContact",
+                        "label": "aboutContact",
+                        "type":"contact",
+                        "iconOn":"ion-ios-people",
+                        "customIcon":"../img/custom-icon/ionic-placeholder.png",
+                        "banner":"../img/custom-images/about/about-banner.jpg"
+                    },
+                    {
+                        "href": "#/app/aboutContact",
+                        "label": "aboutContact",
+                        "type":"contact",
+                        "iconOn":"ion-ios-people",
+                        "customIcon":"../img/custom-icon/ionic-placeholder.png",
+                        "banner":"../img/custom-images/about/about-banner.jpg"
+                    },
+                    {
+                        "href": "#/app/aboutContact",
+                        "label": "aboutContact",
+                        "type":"contact",
+                        "iconOn":"ion-ios-people",
+                        "customIcon":"../img/custom-icon/ionic-placeholder.png",
+                        "banner":"../img/custom-images/about/about-banner.jpg"
+                    },
+                    {
+                        "href": "#/app/about2",
+                        "label": "Aboutsub2",
+                        "type":"about",
+                        "iconOn":"ion-ios-people",
+                        "customIcon":"../img/custom-icon/ionic-placeholder.png",
+                        "banner":"../img/custom-images/about/about-banner.jpg",
+                        "content":[
+                                {
+                                    "id":1,
+                                    "title":"our mission",
+                                    "photo":"../img/custom-images/about/about-mission-banner.jpg",
+                                    "text":"About2 Mission Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis tincidunt ante et pellentesque. Morbi placerat erat mollis lorem interdum, id euismod elit semper. Cras fringilla lacinia est vel mattis. Sed id sem mattis, tempor lacus suscipit, semper nisl. Nullam sagittis lobortis metus vulputate efficitur"
+                                },
+                                {   "id":2,
+                                    "title":"Our Vision",
+                                    "photo":"../img/custom-images/about/about-mission-banner.jpg",
+                                    "text":"About2 Vision Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis tincidunt ante et pellentesque. Morbi placerat erat mollis lorem interdum, id euismod elit semper. Cras fringilla lacinia est vel mattis. Sed id sem mattis, tempor lacus suscipit, semper nisl. Nullam sagittis lobortis metus vulputate efficitur"
+                                }
+                        ]
+                    },
+                    {
+                        "href": "#/app/aboutContact2",
+                        "label": "aboutContact2",
+                        "type":"contact",
+                        "iconOn":"ion-ios-people",
+                        "customIcon":"../img/custom-icon/ionic-placeholder.png",
+                        "banner":"../img/custom-images/about/about-banner.jpg"
+                    },
+                    {
+                        "href": "#/app/about3",
+                        "label": "Aboutsub3",
+                        "type":"about",
+                        "iconOn":"ion-ios-people",
+                        "customIcon":"../img/custom-icon/ionic-placeholder.png",
+                        "banner":"../img/custom-images/about/about-banner.jpg",
+                        "content":[
+                                {
+                                    "id":1,
+                                    "title":"our mission",
+                                    "photo":"../img/custom-images/about/about-mission-banner.jpg",
+                                    "text":"About3 Mission Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis tincidunt ante et pellentesque. Morbi placerat erat mollis lorem interdum, id euismod elit semper. Cras fringilla lacinia est vel mattis. Sed id sem mattis, tempor lacus suscipit, semper nisl. Nullam sagittis lobortis metus vulputate efficitur"
+                                },
+                                {   "id":2,
+                                    "title":"Our Vision",
+                                    "photo":"../img/custom-images/about/about-mission-banner.jpg",
+                                    "text":"About3 Vision Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis tincidunt ante et pellentesque. Morbi placerat erat mollis lorem interdum, id euismod elit semper. Cras fringilla lacinia est vel mattis. Sed id sem mattis, tempor lacus suscipit, semper nisl. Nullam sagittis lobortis metus vulputate efficitur"
+                                }
+                        ]
+                    }
+                ]
+            }
+            
+        },
+        {
+            "href": "#/app/about22",
+            "label": "About22",
+            "iconOn":"ion-ios-people",
+            "customIcon":"../img/custom-icon/ionic-placeholder.png",
+            "banner":"../img/custom-images/about/about-banner.jpg",
+            "type":"about"
+            },
+        {
+            "href": "#/app/about2",
+            "label": "About2",
+            "iconOn":"ion-ios-people",
+            "customIcon":"../img/custom-icon/ionic-placeholder.png",
+            "banner":"../img/custom-images/about/about-banner.jpg",
+            "type":"about",
+            "content":[
+                                {
+                                    "id":1,
+                                    "title":"our mission",
+                                    "photo":"../img/custom-images/about/about-mission-banner.jpg",
+                                    "text":"About Mission Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis tincidunt ante et pellentesque. Morbi placerat erat mollis lorem interdum, id euismod elit semper. Cras fringilla lacinia est vel mattis. Sed id sem mattis, tempor lacus suscipit, semper nisl. Nullam sagittis lobortis metus vulputate efficitur"
+                                },
+                                {   "id":2,
+                                    "title":"Our Vision",
+                                    "photo":"../img/custom-images/about/about-mission-banner.jpg",
+                                    "text":"About Vision Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis tincidunt ante et pellentesque. Morbi placerat erat mollis lorem interdum, id euismod elit semper. Cras fringilla lacinia est vel mattis. Sed id sem mattis, tempor lacus suscipit, semper nisl. Nullam sagittis lobortis metus vulputate efficitur"
+                                }
+                ],
+            "subMenu":{
+                "menuItems":[
+                    {
+                        "href": "#/app/aboutContact",
+                        "label": "aboutContact",
+                        "type":"contact",
+                        "iconOn":"ion-ios-people",
+                        "customIcon":"../img/custom-icon/ionic-placeholder.png",
+                        "banner":"../img/custom-images/about/about-banner.jpg"
+                    },
+                    {
+                        "href": "#/app/aboutContact",
+                        "label": "aboutContact",
+                        "type":"contact",
+                        "iconOn":"ion-ios-people",
+                        "customIcon":"../img/custom-icon/ionic-placeholder.png",
+                        "banner":"../img/custom-images/about/about-banner.jpg"
+                    },
+                    {
+                        "href": "#/app/aboutContact",
+                        "label": "aboutContact",
+                        "type":"contact",
+                        "iconOn":"ion-ios-people",
+                        "customIcon":"../img/custom-icon/ionic-placeholder.png",
+                        "banner":"../img/custom-images/about/about-banner.jpg"
+                    },
+                    {
+                        "href": "#/app/aboutContact",
+                        "label": "aboutContact",
+                        "type":"contact",
+                        "iconOn":"ion-ios-people",
+                        "customIcon":"../img/custom-icon/ionic-placeholder.png",
+                        "banner":"../img/custom-images/about/about-banner.jpg"
+                    },
+                    {
                         "href": "#/app/about2",
                         "label": "Aboutsub2",
                         "type":"about",
@@ -270,7 +410,22 @@
                 }
             ]
         },
-    
+         {
+            "href": "#/app/editor",
+            "label": "Editor",
+            "type": "editor",
+            "iconOn":"ion-earth",
+            "customIcon":"../img/custom-icon/ionic-placeholder.png",
+            "content":"<h1>helloooooo</h1><div>wefwefwefwefwef</div>"
+        },
+         {
+            "href": "#/app/editor2",
+            "label": "Editor2",
+            "type": "editor",
+            "iconOn":"ion-earth",
+            "customIcon":"../img/custom-icon/ionic-placeholder.png",
+            "content":"<h1>hellooooooeee</h1><div>wefwefwefwefwef</div>"
+        },
         {
             "label": "website2",
             "type": "website",
@@ -395,6 +550,18 @@
             "url": "/map",
             "templateUrl": "templates/map.html",
             "controller": "MapCtrl"
+        },
+         {
+            "state": "app.editor",
+            "url": "/editor",
+            "templateUrl": "templates/editor.html",
+            "controller": "EditorCtrl"
+        },
+        {
+            "state": "app.editor2",
+            "url": "/editor2",
+            "templateUrl": "templates/editor.html",
+            "controller": "EditorCtrl"
         }
     ]
 }

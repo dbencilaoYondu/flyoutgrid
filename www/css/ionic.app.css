@@ -9780,6 +9780,11 @@ ion-nav-bar.bar.bar-header {
 .banner {
   width: 100%; }
 
+.list .customIcon {
+  position: absolute;
+  left: 10px;
+  top: 10px; }
+
 .menuList {
   height: 418px;
   overflow-y: scroll;

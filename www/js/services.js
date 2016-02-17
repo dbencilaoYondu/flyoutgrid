@@ -1,5 +1,5 @@
 var app = angular.module('starter.services', [])
-app.factory('Pages',function($http){
+app.factory('Pages',function($http,$compile){
   var obj = {};
   
   $http.get('../app.json').then(function(result){
@@ -7,9 +7,11 @@ app.factory('Pages',function($http){
             });
   obj.getSpecs = function(item){
      angular.forEach(obj.data.data.menuItems,function(a,b){
-        //console.log("key:"+key+" ,"+"value:"+value);
+        //console.log("key:"+b+" ,"+"value:"+a);
+        //obj[a.label] = a;
+       
         if(a.type == "about"){
-           return obj.about = a;
+          return obj.about = a;
         }
         if(a.type == "gallery"){
           return obj.gallery = a;
@@ -28,6 +30,9 @@ app.factory('Pages',function($http){
         }
        if(a.type == "rss"){
           return obj.rss = a;
+        }
+        if(a.type == "editor"){
+          return obj.editor = a;
         }
     });
   }
