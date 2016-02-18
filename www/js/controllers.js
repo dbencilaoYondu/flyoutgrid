@@ -61,12 +61,14 @@ app.controller('InitCtrl', function ($scope, $state, $timeout, $ionicHistory, co
                     'menuContent': {
                         templateUrl: state.templateUrl,
                         controller: state.controller
+                        
                     },
                     'sideMenu':{
                        templateUrl:'templates/sideMenu.html',
                        controller:'SettingsCtrl'            
                      }
-                }
+                },
+                data:state.data
             });
         }
     };
@@ -132,7 +134,10 @@ app.controller('AppCtrl', function ($scope, $state, $ionicHistory, $cordovaInApp
       }
         
      }
-    
+
+     $scope.data = Pages;
+     $scope.currentData = $state.current.data;
+    Pages.getSpecs();
      $scope.subsSwitch = function(label,index){
         $scope.subsOn = true;
 
@@ -149,11 +154,14 @@ app.controller('AppCtrl', function ($scope, $state, $ionicHistory, $cordovaInApp
 
       $scope.pageInfo = function(index){
          
-         $scope.currentParentOfSubInfo = $scope.currentParentOfSub.menuItems[index];
+         //$scope.currentParentOfSubInfo = $scope.currentParentOfSub.menuItems[index];
+        $scope.currentParentOfSubInfo = $scope.currentParentOfSub.menuItems[index];
          console.log('Pageinfo: ');
          console.log(index);
          $scope.aboutIndex = index;
+         console.log('Current sub info: ');
          console.log($scope.currentParentOfSubInfo);
+         console.log($scope);
       }
 
       $scope.backToParentMenu = function(){
@@ -220,8 +228,8 @@ app.controller('SettingsCtrl',function($scope,$ionicModal,Pages, $ionicHistory){
              $scope.withHeight = false;
           }
 
-          console.log('settings: ');
-          console.log($scope);
+          //console.log('settings: ');
+          //console.log($scope);
         }
         $scope.flyBack = function(){
           $('.flyout').removeClass('active');
@@ -241,21 +249,16 @@ app.controller('SettingsCtrl',function($scope,$ionicModal,Pages, $ionicHistory){
           }
         }
       
-    console.log('settings: ');
-    console.log($scope);
+    //console.log('settings: ');
+   // console.log($scope);
 });
-app.controller('MenuCtrl', function($scope,Pages,menuInfo) {
-      $scope.data = Pages;
-      console.log('Menu ctrl: ');
-      console.log($scope);
-});
+
 
 app.controller('AboutCtrl', function($scope,$ionicModal,Pages,$state) {
 
       $scope.data = Pages;
       Pages.getSpecs();
-      $scope.currentAbout = Pages.data.about;
-      console.log($state);
+
       $ionicModal.fromTemplateUrl('aboutMore.html', {
      /* id: $index, // We need to use and ID to identify the modal that is firing the event!*/
       scope: $scope,
@@ -277,31 +280,68 @@ app.controller('AboutCtrl', function($scope,$ionicModal,Pages,$state) {
       console.log('About ctrl: ');
       console.log($scope);
       console.log('Parent');
-      $scope.currentAbout = $scope.$parent.currentParentOfSubInfo;
+
+      $scope.currentData = $state.current.data;
+      $scope.currentAboutData = $scope.data.scrum2[$scope.currentData];
+
+
+
       console.log($scope.$parent.currentParentOfSubInfo);
 
 
 })
-app.controller('ContactCtrl', function($scope,Pages) {$scope.data = Pages;console.log($scope);});
-app.controller('FormCtrl', function($scope,Pages, $http) {
+app.controller('ContactCtrl', function($scope,Pages,$state) {
   $scope.data = Pages;
-  Pages.getSpecs();
+  console.log('contact ctrl' );
   console.log($scope);
 
+    $scope.currentData = $state.current.data;
+    //set data to parent contact pages
+    $scope.currentContactData = $scope.data.scrum2[$scope.currentData];
+
+    //transfer data to sub contact pages
+    if($scope.$parent.currentParentOfSubInfo){
+      $scope.currentContactData = $scope.$parent.currentParentOfSubInfo;
+    }
+    console.log($scope.$parent.currentParentOfSubInfo);
+});
+app.controller('FormCtrl', function($scope,Pages,$state, $http,$ionicScrollDelegate) {
+  $scope.data = Pages;
+  Pages.getSpecs();
+  
   $scope.form = {}
 
   $scope.submitForm = function(){
     console.log($scope);
     console.log($scope.form);
-    $http.post($scope.data.form.api,$scope.form)
-      .then(function(data){
-        if(data.status == true){
-          $scope.form.status = true;
+    $http.post($scope.currentFormData.api,$scope.form)
+      .then(function successCallback(response){
+        if(response.status == true){
+          $scope.success = $scope.currentFormData.onSuccess;
         }
+      },function errorCallback(response){
+        console.log(response);
+        $scope.error = $scope.currentFormData.onError;
       });
     $scope.form = {}
+     $ionicScrollDelegate.scrollTop();
   }
+
+
+  $scope.currentData = $state.current.data;
+    //set data to parent contact pages
+    $scope.currentFormData = $scope.data.scrum2[$scope.currentData];
+
+    //transfer data to sub contact pages
+    if($scope.$parent.currentParentOfSubInfo){
+      $scope.currentFormData = $scope.$parent.currentParentOfSubInfo;
+    }
+    console.log($scope.$parent.currentParentOfSubInfo);
+
+  console.log('form ctrl');
   console.log($scope);
+
+
 });
 app.controller('GalleryCtrl', function($scope,$stateParams, Pages) {
   $scope.data = Pages;
@@ -309,30 +349,16 @@ app.controller('GalleryCtrl', function($scope,$stateParams, Pages) {
   $scope.id = $stateParams.id;
 });
 
-app.controller('EditorCtrl', function($scope,$stateParams, Pages, $sce) {
+app.controller('EditorCtrl', function($scope,$stateParams, Pages, $sce,$state) {
   $scope.data = Pages;
   $scope.paramsId = $stateParams.paramsId;
-  $scope.id = $stateParams.id;
+  
    console.log('editor');
    console.log($scope);
    $scope.$sce = $sce;
+   $scope.currentData = $state.current.data;
 });
 
-app.directive("otcDynamic", function($compile) {
-     
-    var template = "<button ng-click='doSomething()'>{{label}}</button>";
-     
-    return{
-        link: function(scope, element){
-            element.on("click", function() {
-                scope.$apply(function() {
-                    var content = $compile(template)(scope);
-                    element.append(content);
-               })
-            });
-        }
-    }
-});
 
 app.controller("FeedCtrl", ['$scope','FeedService','Pages', function ($scope,Feed,Pages) {    
     $scope.data = Pages;

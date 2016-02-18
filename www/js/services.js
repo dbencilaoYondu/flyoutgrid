@@ -1,16 +1,19 @@
 var app = angular.module('starter.services', [])
 app.factory('Pages',function($http,$compile){
   var obj = {};
-  
   $http.get('../app.json').then(function(result){
         obj.data = result;
             });
   obj.getSpecs = function(item){
+
+    obj.scrum = [];
+    obj.scrum2 = {};
      angular.forEach(obj.data.data.menuItems,function(a,b){
         //console.log("key:"+b+" ,"+"value:"+a);
-        //obj[a.label] = a;
+        obj.scrum.push(a);
+        obj.scrum2[a.label] = a;
        
-        if(a.type == "about"){
+       /* if(a.type == "about"){
           return obj.about = a;
         }
         if(a.type == "gallery"){
@@ -33,7 +36,7 @@ app.factory('Pages',function($http,$compile){
         }
         if(a.type == "editor"){
           return obj.editor = a;
-        }
+        }*/
     });
   }
 
