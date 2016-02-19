@@ -141,6 +141,8 @@ app.controller('AppCtrl', function ($scope, $state, $ionicHistory, $cordovaInApp
      $scope.subsSwitch = function(label,index){
         $scope.subsOn = true;
 
+        $('.backdrop.active').removeClass('visible');
+
         if(Pages.data.data.menuItems[index].label == label){
 
           $scope.currentParentOfSub = Pages.data.data.menuItems[index].subMenu;
@@ -166,7 +168,10 @@ app.controller('AppCtrl', function ($scope, $state, $ionicHistory, $cordovaInApp
       $scope.backToParentMenu = function(){
           $scope.subsOn = false;
         }
-     
+     $scope.backdropHide = function() {
+        $('.backdrop.active').removeClass('visible');
+        $('.flyout').removeClass('active');
+      }
 });
 
 /**
@@ -232,6 +237,14 @@ app.controller('SettingsCtrl',function($scope,$ionicModal,Pages, $ionicHistory){
           $('.flyout').removeClass('active');
         }
 
+        //Show a backdrop for one second
+        $scope.backdrop = function() {
+          $('.backdrop.active').toggleClass('visible');
+        };
+         $scope.backdropActive = function() {
+          $('.backdrop.active').addClass('visible');
+        };
+
         //for sorting menu orientation
         $scope.sortIcon = "ion-ios-more-outline";
         $scope.sortMenu = function(){
@@ -277,21 +290,22 @@ app.controller('AboutCtrl', function($scope,$ionicModal,Pages,$state) {
       console.log('About ctrl: ');
       console.log($scope);
       console.log('Parent');
-
-      $scope.currentData = $state.current.data;
-      $scope.currentAboutData = $scope.data.scrum2[$scope.currentData];
-
+      //data sharing
+        $scope.currentData = $state.current.data;
+        //set data to parent about pages
+        $scope.currentAboutData = $scope.data.scrum2[$scope.currentData];
+      //end of data sharing
 
 
       console.log($scope.$parent.currentParentOfSubInfo);
 
 
-})
+});
 app.controller('ContactCtrl', function($scope,Pages,$state) {
   $scope.data = Pages;
   console.log('contact ctrl' );
   console.log($scope);
-
+  //data sharing
     $scope.currentData = $state.current.data;
     //set data to parent contact pages
     $scope.currentContactData = $scope.data.scrum2[$scope.currentData];
@@ -300,6 +314,7 @@ app.controller('ContactCtrl', function($scope,Pages,$state) {
     if($scope.$parent.currentParentOfSubInfo){
       $scope.currentContactData = $scope.$parent.currentParentOfSubInfo;
     }
+  //end of data sharing
     console.log($scope.$parent.currentParentOfSubInfo);
 });
 app.controller('FormCtrl', function($scope,Pages,$state, $http,$ionicScrollDelegate) {
@@ -320,11 +335,11 @@ app.controller('FormCtrl', function($scope,Pages,$state, $http,$ionicScrollDeleg
         console.log(response);
         $scope.error = $scope.currentFormData.onError;
       });
-    $scope.form = {}
+    $scope.form = {};
      $ionicScrollDelegate.scrollTop();
   }
 
-
+  //data sharing
   $scope.currentData = $state.current.data;
     //set data to parent form pages
     $scope.currentFormData = $scope.data.scrum2[$scope.currentData];
@@ -334,6 +349,7 @@ app.controller('FormCtrl', function($scope,Pages,$state, $http,$ionicScrollDeleg
       $scope.currentFormData = $scope.$parent.currentParentOfSubInfo;
     }
     console.log($scope.$parent.currentParentOfSubInfo);
+  //end of data sharing
 
   console.log('form ctrl');
   console.log($scope);
