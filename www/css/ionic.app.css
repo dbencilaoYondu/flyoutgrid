@@ -9804,6 +9804,8 @@ ion-nav-bar.bar.bar-header {
       color: #fff; }
       .menuList li a i {
         font-size: 50px; }
+        .menuList li a i.subArrow {
+          font-size: 30px; }
     .menuList li h2 {
       position: absolute;
       bottom: 0;

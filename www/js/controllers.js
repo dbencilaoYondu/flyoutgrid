@@ -137,7 +137,7 @@ app.controller('AppCtrl', function ($scope, $state, $ionicHistory, $cordovaInApp
 
      $scope.data = Pages;
      $scope.currentData = $state.current.data;
-    Pages.getSpecs();
+     Pages.getSpecs();
      $scope.subsSwitch = function(label,index){
         $scope.subsOn = true;
 
@@ -154,7 +154,6 @@ app.controller('AppCtrl', function ($scope, $state, $ionicHistory, $cordovaInApp
 
       $scope.pageInfo = function(index){
          
-         //$scope.currentParentOfSubInfo = $scope.currentParentOfSub.menuItems[index];
         $scope.currentParentOfSubInfo = $scope.currentParentOfSub.menuItems[index];
          console.log('Pageinfo: ');
          console.log(index);
@@ -228,8 +227,6 @@ app.controller('SettingsCtrl',function($scope,$ionicModal,Pages, $ionicHistory){
              $scope.withHeight = false;
           }
 
-          //console.log('settings: ');
-          //console.log($scope);
         }
         $scope.flyBack = function(){
           $('.flyout').removeClass('active');
@@ -329,10 +326,10 @@ app.controller('FormCtrl', function($scope,Pages,$state, $http,$ionicScrollDeleg
 
 
   $scope.currentData = $state.current.data;
-    //set data to parent contact pages
+    //set data to parent form pages
     $scope.currentFormData = $scope.data.scrum2[$scope.currentData];
 
-    //transfer data to sub contact pages
+    //transfer data to sub form pages
     if($scope.$parent.currentParentOfSubInfo){
       $scope.currentFormData = $scope.$parent.currentParentOfSubInfo;
     }
@@ -360,7 +357,7 @@ app.controller('EditorCtrl', function($scope,$stateParams, Pages, $sce,$state) {
 });
 
 
-app.controller("FeedCtrl", ['$scope','FeedService','Pages', function ($scope,Feed,Pages) {    
+app.controller("FeedCtrl", ['$scope','FeedService','Pages','$state', function ($scope,Feed,Pages,$state) {    
     $scope.data = Pages;
     Pages.getSpecs();  
     console.log($scope);
@@ -368,9 +365,19 @@ app.controller("FeedCtrl", ['$scope','FeedService','Pages', function ($scope,Fee
     $scope.loadFeed=function(url){
         Feed.parseFeed(url).then(function(res){
             console.log(res);
-            $scope.feeds=res.data.responseData.feed.entries;
+            $scope.feeds = res.data.responseData.feed.entries;
         });
     }
+
+    $scope.currentData = $state.current.data;
+    //set data to parent rss pages
+    $scope.currentRssData = $scope.data.scrum2[$scope.currentData];
+
+    //transfer data to sub rss pages
+    if($scope.$parent.currentParentOfSubInfo){
+      $scope.currentRssData = $scope.$parent.currentParentOfSubInfo;
+    }
+    console.log($scope.$parent.currentParentOfSubInfo);
 
 }]);
 
