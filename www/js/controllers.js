@@ -297,7 +297,7 @@ app.controller('AboutCtrl', function($scope,$ionicModal,Pages,$state) {
       //end of data sharing
 
 
-      console.log($scope.$parent.currentParentOfSubInfo);
+      console.log($scope.currentParentOfSubInfo);
 
 
 });
@@ -354,13 +354,26 @@ app.controller('FormCtrl', function($scope,Pages,$state, $http,$ionicScrollDeleg
   console.log('form ctrl');
   console.log($scope);
 
-
 });
-app.controller('GalleryCtrl', function($scope,$stateParams, Pages) {
+app.controller('WebsiteCtrl', function($scope,Pages,$state,$sce) {
   $scope.data = Pages;
-  $scope.paramsId = $stateParams.paramsId;
-  $scope.id = $stateParams.id;
+  console.log('contact ctrl' );
+  console.log($scope);
+
+  $scope.$sce = $sce;
+  //data sharing
+    $scope.currentData = $state.current.data;
+    //set data to parent contact pages
+    $scope.currentWebsiteData = $scope.data.scrum2[$scope.currentData];
+    $scope.currentWebsiteDataURL = $sce.trustAsResourceUrl($scope.data.scrum2[$scope.currentData].url);
+    //transfer data to sub contact pages
+    if($scope.$parent.currentParentOfSubInfo){
+      $scope.currentContactData = $scope.$parent.currentParentOfSubInfo;
+    }
+  //end of data sharing
+    console.log($scope.$parent.currentParentOfSubInfo);
 });
+
 
 app.controller('EditorCtrl', function($scope,$stateParams, Pages, $sce,$state) {
   $scope.data = Pages;
@@ -369,9 +382,21 @@ app.controller('EditorCtrl', function($scope,$stateParams, Pages, $sce,$state) {
    console.log('editor');
    console.log($scope);
    $scope.$sce = $sce;
-   $scope.currentData = $state.current.data;
-});
 
+   //data sharing
+    $scope.currentData = $state.current.data;
+   
+    //transfer data to sub contact pages
+    if($scope.currentParentOfSubInfo){
+      $scope.currentEditorData = $scope.currentParentOfSubInfo;
+       $scope.currentEditorDataHtml = $sce.trustAsHtml($scope.currentEditorData.content);
+    }else{
+       //set data to parent contact pages
+      $scope.currentEditorData = $scope.data.scrum2[$scope.currentData];
+      $scope.currentEditorDataHtml = $sce.trustAsHtml($scope.data.scrum2[$scope.currentData].content);
+    }
+  //end of data sharing
+});
 
 app.controller("FeedCtrl", ['$scope','FeedService','Pages','$state', function ($scope,Feed,Pages,$state) {    
     $scope.data = Pages;
@@ -397,7 +422,11 @@ app.controller("FeedCtrl", ['$scope','FeedService','Pages','$state', function ($
 
 }]);
 
-
+app.controller('GalleryCtrl', function($scope,$stateParams, Pages) {
+  $scope.data = Pages;
+  $scope.paramsId = $stateParams.paramsId;
+  $scope.id = $stateParams.id;
+});
 app.controller('MapCtrl', function($scope ,$state, Pages,$cordovaGeolocation) {
   var options = {timeout: 10000, enableHighAccuracy: true};
  

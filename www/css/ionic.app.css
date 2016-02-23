@@ -9931,7 +9931,7 @@ ion-modal-view#settings .item-divider {
   background-color: #CB2701;
   width: 80%;
   box-shadow: 0px 1px 4px #2f2f2f;
-  transform: translate(-21em, 0);
+  transform: translate(-86em, 0);
   transition: 300ms ease-in-out; }
   .flyout.active {
     transform: translate(0em, 0); }

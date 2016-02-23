@@ -5,7 +5,7 @@
     "menuBanner":"../img/custom-images/carImg1_02.jpg",
     "menuItems": [        
         {
-
+            "id":1,
             "label": "About",
             "iconOn":"ion-ios-people",
             "customIcon":"../img/custom-icon/ionic-placeholder.png",
@@ -13,7 +13,8 @@
             "type":"about",
             "subMenu":{
                 "menuItems":[
-                    {
+                    {   
+                        "id":101,
                         "href": "#/app/aboutContact",
                         "label": "aboutContact",
                         "type":"contact",
@@ -48,6 +49,7 @@
                         ]
                     },
                     {
+                        "id":102,
                         "href": "#/app/about2",
                         "label": "About2",
                         "type":"about",
@@ -73,7 +75,7 @@
             }
             
         },
-        {
+        {   "id":2,
             "href": "#/app/aboutContact2",
             "label": "aboutContact2",
             "type":"contact",
@@ -107,7 +109,7 @@
                 }
             ]
         },
-        {
+        {   "id":3,
             "href": "#/app/aboutContact3",
             "label": "aboutContact3",
             "type":"contact",
@@ -141,7 +143,7 @@
                 }
             ]
         },
-        {
+        {   "id":4,
             "href": "#/app/about22",
             "label": "About22",
             "iconOn":"ion-ios-people",
@@ -163,6 +165,7 @@
                 ]
             },
             {
+            "id":5,
             "href": "#/app/about23",
             "label": "About23",
             "iconOn":"ion-ios-people",
@@ -184,6 +187,7 @@
                 ]
             },
         {
+            "id":6,
             "label": "About2widthSub",
             "iconOn":"ion-ios-people",
             "customIcon":"../img/custom-icon/ionic-placeholder.png",
@@ -191,7 +195,70 @@
             "type":"about",
             "subMenu":{
                 "menuItems":[
+                {       
+                        "id":601,
+                        "href": "#/app/about24",
+                        "label": "About24",
+                        "type":"about",
+                        "iconOn":"ion-ios-people",
+                        "customIcon":"../img/custom-icon/ionic-placeholder.png",
+                        "banner":"../img/custom-images/about/about-banner.jpg",
+                        "content":[
+                                {
+                                    "id":1,
+                                    "title":"our mission",
+                                    "photo":"../img/custom-images/about/about-mission-banner.jpg",
+                                    "text":"About24 Mission Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis tincidunt ante et pellentesque. Morbi placerat erat mollis lorem interdum, id euismod elit semper. Cras fringilla lacinia est vel mattis. Sed id sem mattis, tempor lacus suscipit, semper nisl. Nullam sagittis lobortis metus vulputate efficitur"
+                                },
+                                {   "id":2,
+                                    "title":"Our Vision",
+                                    "photo":"../img/custom-images/about/about-mission-banner.jpg",
+                                    "text":"About2 Vision Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis tincidunt ante et pellentesque. Morbi placerat erat mollis lorem interdum, id euismod elit semper. Cras fringilla lacinia est vel mattis. Sed id sem mattis, tempor lacus suscipit, semper nisl. Nullam sagittis lobortis metus vulputate efficitur"
+                                }
+                        ]
+                    },
                     {
+                        "id":10,
+                        "href": "#/app/editor2",
+                        "label": "Editor2",
+                        "type": "editor",
+                        "iconOn":"ion-earth",
+                        "customIcon":"../img/custom-icon/ionic-placeholder.png",
+                        "content":"<h1>hellooooooewfwe214324324234eee</h1><div>wefwefweewfw43534534543fwefwef</div>"
+                    },
+                    {
+                        "id":11,
+                        "href": "#/app/website2",
+                        "label": "website2",
+                        "type": "website",
+                        "iconOn":"ion-earth",
+                        "customIcon":"../img/custom-icon/ionic-placeholder.png",
+                        "url":"http://www.cnn.com"
+                    },
+                    {
+                        "id":602,
+                        "href": "#/app/about24",
+                        "label": "About24",
+                        "type":"about",
+                        "iconOn":"ion-ios-people",
+                        "customIcon":"../img/custom-icon/ionic-placeholder.png",
+                        "banner":"../img/custom-images/about/about-banner.jpg",
+                        "content":[
+                                {
+                                    "id":1,
+                                    "title":"our mission",
+                                    "photo":"../img/custom-images/about/about-mission-banner.jpg",
+                                    "text":"About24 Mission Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis tincidunt ante et pellentesque. Morbi placerat erat mollis lorem interdum, id euismod elit semper. Cras fringilla lacinia est vel mattis. Sed id sem mattis, tempor lacus suscipit, semper nisl. Nullam sagittis lobortis metus vulputate efficitur"
+                                },
+                                {   "id":2,
+                                    "title":"Our Vision",
+                                    "photo":"../img/custom-images/about/about-mission-banner.jpg",
+                                    "text":"About2 Vision Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis tincidunt ante et pellentesque. Morbi placerat erat mollis lorem interdum, id euismod elit semper. Cras fringilla lacinia est vel mattis. Sed id sem mattis, tempor lacus suscipit, semper nisl. Nullam sagittis lobortis metus vulputate efficitur"
+                                }
+                        ]
+                    },
+                    {
+                        "id":603,
                         "href": "#/app/about24",
                         "label": "About24",
                         "type":"about",
@@ -213,6 +280,7 @@
                         ]
                     },
                      {
+                        "id":604,
                         "href": "#/app/rss2",
                         "label": "rss2",
                         "type": "rss",
@@ -238,6 +306,7 @@
                         ]
                     },
                     {
+                        "id":605,
                         "href": "#/app/form2",
                         "label": "inquire2",
                         "type": "form",
@@ -276,11 +345,13 @@
                                 "checkList":[
                                     {
                                         "label":"check 1",
-                                        "modelName":"check1"
+                                        "modelName":"check1",
+                                        "group":"checkgroup group"
                                     },
                                     {
                                         "label":"check 2",
-                                        "modelName":"check2"
+                                        "modelName":"check2",
+                                        "group":"checkgroup group"
                                     }
                                 ]
                             },
@@ -290,11 +361,13 @@
                                 "radioList":[
                                     {
                                         "label":"radio 1",
-                                        "modelName":"radio1"
+                                        "modelName":"radio1",
+                                        "group":"radio group"
                                     },
                                     {
                                         "label":"radio 2",
-                                        "modelName":"radio2"
+                                        "modelName":"radio2",
+                                        "group":"radio group"
                                     }
                                 ]
                             },
@@ -341,6 +414,7 @@
                         ]
                     },
                     {
+                        "id":606,
                         "href": "#/app/form3",
                         "label": "inquire3",
                         "type": "form",
@@ -379,11 +453,13 @@
                                 "checkList":[
                                     {
                                         "label":"check 1",
-                                        "modelName":"check1"
+                                        "modelName":"check1",
+                                        "group":"gender"
                                     },
                                     {
                                         "label":"check 2",
-                                        "modelName":"check2"
+                                        "modelName":"check2",
+                                        "group":"gender"
                                     }
                                 ]
                             },
@@ -393,11 +469,13 @@
                                 "radioList":[
                                     {
                                         "label":"radio 1",
-                                        "modelName":"radio1"
+                                        "modelName":"radio1",
+                                        "group":"radio group"
                                     },
                                     {
                                         "label":"radio 2",
-                                        "modelName":"radio2"
+                                        "modelName":"radio2",
+                                        "group":"radio group"
                                     }
                                 ]
                             },
@@ -448,7 +526,7 @@
             }
             
         },
-        {
+        {   "id":7,
             "href": "#/app/form",
             "label": "inquire",
             "type": "form",
@@ -558,7 +636,8 @@
                 }
             ]
         },
-        {
+        {   
+            "id":8,
             "href": "#/app/form4",
             "label": "inquire4",
             "type": "form",
@@ -669,6 +748,7 @@
             ]
         },
          {
+            "id":9,
             "href": "#/app/editor",
             "label": "Editor",
             "type": "editor",
@@ -676,15 +756,10 @@
             "customIcon":"../img/custom-icon/ionic-placeholder.png",
             "content":"<h1>helloooooo</h1><div>wefwefwefwefwef</div>"
         },
-         {
-            "href": "#/app/editor2",
-            "label": "Editor2",
-            "type": "editor",
-            "iconOn":"ion-earth",
-            "customIcon":"../img/custom-icon/ionic-placeholder.png",
-            "content":"<h1>hellooooooeee</h1><div>wefwefwefwefwef</div>"
-        },
+         
         {
+            "id":11,
+            "href": "#/app/website2",
             "label": "website2",
             "type": "website",
             "iconOn":"ion-earth",
@@ -692,13 +767,16 @@
             "url":"http://www.cnn.com"
         },
         {
+            "id":12,
+            "href": "#/app/website",
             "label": "website",
             "type": "website",
             "iconOn":"ion-earth",
             "customIcon":"../img/custom-icon/ionic-placeholder.png",
-            "url":"https://www.google.com.ph"
+            "url":"http://yondu.com/"
         },
         {
+            "id":13,
             "href": "#/app/map",
             "label": "Location",
             "type": "map",
@@ -706,6 +784,7 @@
             "customIcon":"../img/custom-icon/ionic-placeholder.png"
         },
         {
+            "id":14,
             "href": "#/app/rss",
             "label": "rss",
             "type": "rss",
@@ -744,7 +823,7 @@
             "url": "/about",
             "templateUrl": "templates/about.html",
             "controller": "AboutCtrl",
-            "data":"About"
+            "data":"1"
             
         },
         {
@@ -752,28 +831,28 @@
             "url": "/aboutContact",
             "templateUrl": "templates/contact.html",
             "controller": "ContactCtrl",
-            "data":"aboutContact"
+            "data":"101"
         },
         {
             "state": "app.aboutContact2",
             "url": "/aboutContact2",
             "templateUrl": "templates/contact.html",
             "controller": "ContactCtrl",
-            "data":"aboutContact2"
+            "data":"2"
         },
         {
             "state": "app.aboutContact3",
             "url": "/aboutContact3",
             "templateUrl": "templates/contact.html",
             "controller": "ContactCtrl",
-            "data":"aboutContact3"
+            "data":"3"
         },
         {
             "state": "app.about2",
             "url": "/about2",
             "templateUrl": "templates/about.html",
             "controller":"AboutCtrl",
-            "data":"About2"
+            "data":"102"
         },
         {
             "state": "app.about2WithSub",
@@ -787,7 +866,7 @@
             "url": "/about22",
             "templateUrl": "templates/about.html",
             "controller":"AboutCtrl",
-            "data":"About22",
+            "data":"4",
             "defaultState": true
         },
         {
@@ -795,14 +874,14 @@
             "url": "/about23",
             "templateUrl": "templates/about.html",
             "controller":"AboutCtrl",
-            "data":"About23"
+            "data":"5"
         },
          {
             "state": "app.about24",
             "url": "/about24",
             "templateUrl": "templates/about.html",
             "controller":"AboutCtrl",
-            "data":"About24"
+            "data":"601"
         },
         {
             "state": "app.about3",
@@ -823,28 +902,28 @@
             "url": "/form",
             "templateUrl": "templates/form.html",
             "controller": "FormCtrl",
-            "data":"inquire"
+            "data":"7"
         },
          {
             "state": "app.form2",
             "url": "/form2",
             "templateUrl": "templates/form.html",
             "controller": "FormCtrl",
-            "data":"inquire2"
+            "data":"605"
         },
          {
             "state": "app.form3",
             "url": "/form3",
             "templateUrl": "templates/form.html",
             "controller": "FormCtrl",
-            "data":"inquire3"
+            "data":"604"
         },
          {
             "state": "app.form4",
             "url": "/form4",
             "templateUrl": "templates/form.html",
             "controller": "FormCtrl",
-            "data":"inquire4"
+            "data":"8"
         },
         {
             "state": "app.gallery",
@@ -863,14 +942,14 @@
             "url": "/rss",
             "templateUrl": "templates/rss.html",
             "controller": "FeedCtrl",
-            "data":"rss"
+            "data":"14"
         },
          {
             "state": "app.rss2",
             "url": "/rss2",
             "templateUrl": "templates/rss.html",
             "controller": "FeedCtrl",
-            "data":"rss2"
+            "data":"604"
         },
         {
             "state": "app.map",
@@ -883,13 +962,28 @@
             "url": "/editor",
             "templateUrl": "templates/editor.html",
             "controller": "EditorCtrl",
-            "data":"Editor"
+            "data":"9"
         },
         {
             "state": "app.editor2",
             "url": "/editor2",
             "templateUrl": "templates/editor.html",
-            "controller": "EditorCtrl"
+            "controller": "EditorCtrl",
+            "data":"10"
+        },
+        {
+            "state": "app.website",
+            "url": "/website",
+            "templateUrl": "templates/website.html",
+            "controller": "WebsiteCtrl",
+            "data":"12"
+        },
+        {
+            "state": "app.website2",
+            "url": "/website2",
+            "templateUrl": "templates/website.html",
+            "controller": "WebsiteCtrl",
+            "data":"11"
         }
     ]
 }
