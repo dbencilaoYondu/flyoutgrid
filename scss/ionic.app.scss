@@ -273,6 +273,18 @@ ion-modal-view{
 		}
 	}
 }
+
+//blank
+.blankWrapper{
+	padding:12px;
+	header{
+		font-size: 24px;
+	}
+	article{
+		font-size: 15px;
+    	padding: 12px 0;
+	}
+}
 //google map
 .angular-google-map-container {
 		height:594px;

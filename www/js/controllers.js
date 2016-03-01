@@ -211,6 +211,7 @@ app.controller('SettingsCtrl',function($scope,$ionicModal,Pages, $ionicHistory){
         $scope.oModalSettings = modal;
       });
 
+
       $scope.openModal = function(index) {
         $scope.oModalSettings.show();
       };
@@ -222,6 +223,8 @@ app.controller('SettingsCtrl',function($scope,$ionicModal,Pages, $ionicHistory){
        $scope.myGoBack = function() {
           $ionicHistory.goBack();
         };
+
+
 
         $scope.flyOut = function(){
           $('.flyout').addClass('active');
@@ -263,7 +266,26 @@ app.controller('SettingsCtrl',function($scope,$ionicModal,Pages, $ionicHistory){
    // console.log($scope);
 });
 
+app.controller('BlankCtrl',function($scope,Pages,$timeout){
 
+  $timeout(function() {
+    
+     if($scope.data.data.data.previewObj.status == true){
+        $('.flyout').addClass('active');
+        $('.backdrop.active').addClass('visible');
+        console.log("previewStatus true");
+      }else{
+        console.log("previewStatus false");
+      }
+
+
+  }, 10);
+  
+
+  $scope.blankOn = $scope.data.data.data.previewObj.contentStatus;
+
+  console.log($scope);
+});
 app.controller('AboutCtrl', function($scope,$ionicModal,Pages,$state) {
 
       $scope.data = Pages;
@@ -476,6 +498,7 @@ app.controller('GalleryCtrl', function($scope,$stateParams,$state, Pages) {
       $scope.currentGalleryData = $scope.currentParentOfSubInfo;
     }
     console.log($scope.currentParentOfSubInfo);
+
 });
 app.controller('MapCtrl', function($scope ,$state, Pages,$cordovaGeolocation) {
   var options = {timeout: 10000, enableHighAccuracy: true};
