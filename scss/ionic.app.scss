@@ -283,6 +283,11 @@ ion-modal-view{
 	article{
 		font-size: 15px;
     	padding: 12px 0;
+    	.icon{
+			font-size: 100px;
+		    float: left;
+		    padding: 12px;
+    	}
 	}
 }
 //google map
@@ -290,6 +295,21 @@ ion-modal-view{
 		height:594px;
 }
 
+//website
+#website{
+	.scroll{
+		height:100%;
+	}
+}
+//video
+#video{
+	.embed-responsive-item{
+		width:100%;
+	}
+	.ytp-thumbnail-overlay{
+			background-size:100%;
+		}
+}
 //flyout
 .flyout{
 	position:absolute;

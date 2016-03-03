@@ -9930,9 +9930,22 @@ ion-modal-view#settings .item-divider {
   .blankWrapper article {
     font-size: 15px;
     padding: 12px 0; }
+    .blankWrapper article .icon {
+      font-size: 100px;
+      float: left;
+      padding: 12px; }
 
 .angular-google-map-container {
   height: 594px; }
+
+#website .scroll {
+  height: 100%; }
+
+#video .embed-responsive-item {
+  width: 100%; }
+
+#video .ytp-thumbnail-overlay {
+  background-size: 100%; }
 
 .flyout {
   position: absolute;
