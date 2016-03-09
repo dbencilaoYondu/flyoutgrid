@@ -1,8 +1,4 @@
 {
-    "previewObj":{
-            "status":true,
-            "contentStatus":true
-        },
     "stylesheet":"css/style.css",
     "applicationName":"Micoioc",
     "headerText":"header Text",
@@ -455,7 +451,7 @@
                         "subject":"From custom form",
                         "formName":"myForm",
                         "description":"Lorem222 ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis tincidunt ante et pellentes",
-                        "api":"submit.php",
+                        "api":"http://52.74.243.149:8080/m360/service/index.php",
                         "fields":[
                             {
                                 "type":"input",
@@ -634,6 +630,22 @@
                                 ]
                             },
                             {
+                                "type":"radio",
+                                "label":"radio2",
+                                "radioList":[
+                                    {
+                                        "label":"radio 1",
+                                        "modelName":"radio1",
+                                        "group":"radio group2"
+                                    },
+                                    {
+                                        "label":"radio 2",
+                                        "modelName":"radio2",
+                                        "group":"radio group2"
+                                    }
+                                ]
+                            },
+                            {
                                 "type":"dropdown",
                                 "label":"options",
                                 "selections":[
@@ -691,7 +703,7 @@
             "subject":"From custom form",
             "formName":"myForm",
             "description":"Lorem111 ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis tincidunt ante et pellentes",
-            "api":"submit.php",
+            "api":"http://192.168.20.5/builder/services/api/form_builder_send_email",
             "onSuccess":"Details Successfully sent",
             "onError":"Something went wrong",
             "fields":[
@@ -947,7 +959,33 @@
             "label": "Location",
             "type": "map",
             "iconOn":"ion-ios-location",
-            "customIcon":"../img/custom-icon/ionic-placeholder.png"
+            "customIcon":"../img/custom-icon/ionic-placeholder.png",
+            "mapOptions":{
+                    "center":{
+                            "lat":-33.9,
+                            "lng":151.2
+                        },
+                    "markers":[
+                            {
+                                "title":"Bondi Beach",
+                                "lat": -33.890542,
+                                "lng":151.274856,
+                                "zIndex":4
+                            },
+                            {
+                                "title":"Bondi Beach",
+                                "lat": -33.923036,
+                                "lng":151.259052,
+                                "zIndex":5
+                            },
+                            {
+                                "title":"Bondi Beach",
+                                "lat": -34.028249,
+                                "lng":151.157507,
+                                "zIndex":3
+                            }
+                        ]
+                }
         },
         {    
                 "id":133,
@@ -1105,11 +1143,18 @@
             "controller": "DashboardCtrl"
         },
          {
+            "state": "app.menupreview",
+            "url": "/menupreview",
+            "templateUrl": "templates/blank.html",
+            "controller":"MenuPreviewCtrl",
+            "defaultState": true     
+        },
+         {
             "state": "app.blank",
             "url": "/blank",
             "templateUrl": "templates/blank.html",
-             "controller":"BlankCtrl",
-            "defaultState": true
+             "controller":"BlankCtrl"
+
         },
          {
             "state": "app.about22",
@@ -1250,7 +1295,8 @@
             "state": "app.map",
             "url": "/map",
             "templateUrl": "templates/map.html",
-            "controller": "MapCtrl"
+            "controller": "MapCtrl",
+            "data":"13"
         },
          {
             "state": "app.editor",
