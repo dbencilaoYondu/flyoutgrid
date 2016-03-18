@@ -180,7 +180,7 @@ ion-nav-bar.bar.bar-header{
 	    background-position: center center;
 	    h2{
 	    	    text-align: center;
-    			line-height: 120px;
+    			margin-top: 42px;
     			text-transform:capitalize;
     			position: absolute;
 			    margin-left: auto;
@@ -276,7 +276,9 @@ ion-modal-view{
 
 //blank
 .blankWrapper{
-	padding:12px;
+	padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 12px;
 	header{
 		font-size: 24px;
 	}
@@ -301,7 +303,7 @@ ion-modal-view{
 		}
 }
 //google map
-#map {
+.mapc {
     height: 92%;
     width: 100%;
     margin-top: 43px;
@@ -312,6 +314,9 @@ ion-modal-view{
 //website
 #website{
 	.scroll{
+		height:100%;
+	}
+	.website-container{
 		height:100%;
 	}
 }
